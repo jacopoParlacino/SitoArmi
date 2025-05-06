@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti | ARMERIA NAZIONALE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="contatti.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-banner">
+        <div class="symbol-left"></div>
+        <h1>ARMERIA NAZIONALE</h1>
+        <div class="symbol-right"></div>
+        <div class="motto">CREDERE • OBBEDIRE • COMBATTERE</div>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="storia.html">STORIA</a></li>
+            <li><a href="contatti.html" class="active">CONTATTI</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="contatti-hero">
+        <div class="hero-overlay">
+            <h2>AL SERVIZIO DELLA PATRIA</h2>
+            <p>Dal 1922 forniamo armi di qualità superiore per la difesa della nazione</p>
+        </div>
+    </section>
+
+    <section class="contatti-section">
+        <div class="contatti-container">
+            <div class="contatti-info">
+                <h3>INFORMAZIONI DI CONTATTO</h3>
+                <div class="info-block">
+                    <div class="info-icon sede"></div>
+                    <div class="info-content">
+                        <h4>SEDE PRINCIPALE</h4>
+                        <p>Via Roma, 28</p>
+                        <p>00184 Roma, Italia</p>
+                    </div>
+                </div>
+                
+                <div class="info-block">
+                    <div class="info-icon telefono"></div>
+                    <div class="info-content">
+                        <h4>TELEFONO</h4>
+                        <p>+39 06 1234567</p>
+                        <p>Lun-Ven: 9:00-18:00</p>
+                    </div>
+                </div>
+                
+                <div class="info-block">
+                    <div class="info-icon email"></div>
+                    <div class="info-content">
+                        <h4>EMAIL</h4>
+                        <p>info@armerianazionale.it</p>
+                        <p>vendite@armerianazionale.it</p>
+                    </div>
+                </div>
+                
+                <div class="info-block">
+                    <div class="info-icon orari"></div>
+                    <div class="info-content">
+                        <h4>ORARI DI APERTURA</h4>
+                        <p>Lunedì - Venerdì: 9:00 - 18:00</p>
+                        <p>Sabato: 9:00 - 13:00</p>
+                        <p>Domenica: Chiuso</p>
+                    </div>
+                </div>
+                
+                <div class="avviso-importante">
+                    <h4>AVVISO IMPORTANTE</h4>
+                    <p>La vendita di armi è riservata esclusivamente ai possessori di regolare porto d'armi. È necessario presentare la documentazione richiesta al momento dell'acquisto.</p>
+                </div>
+            </div>
+            
+            <div class="contatti-form">
+                <h3>INVIA UN MESSAGGIO</h3>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="nome">Nome e Cognome *</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="oggetto">Oggetto *</label>
+                        <select id="oggetto" name="oggetto" required>
+                            <option value="" disabled selected>Seleziona un'opzione</option>
+                            <option value="informazioni">Richiesta informazioni</option>
+                            <option value="acquisto">Informazioni su acquisto</option>
+                            <option value="assistenza">Assistenza tecnica</option>
+                            <option value="altro">Altro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="messaggio">Messaggio *</label>
+                        <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy">Accetto la <a href="#">Privacy Policy</a> *</label>
+                    </div>
+                    
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="marketing" name="marketing">
+                        <label for="marketing">Desidero ricevere aggiornamenti e offerte speciali</label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">INVIA MESSAGGIO</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="mappa-section">
+        <h3>DOVE SIAMO</h3>
+        <div class="mappa-container">
+            <!-- Qui inserire la mappa (Google Maps o immagine statica) -->
+            <div class="mappa-placeholder">
+                <img src="https://via.placeholder.com/1200x400" alt="Mappa della sede dell'Armeria Nazionale">
+            </div>
+        </div>
+    </section>
+    
+    <section class="certificazioni-section">
+        <h3>LE NOSTRE CERTIFICAZIONI</h3>
+        <div class="certificazioni-container">
+            <div class="certificazione">
+                <div class="certificazione-icon"></div>
+                <h4>CERTIFICAZIONE NAZIONALE</h4>
+                <p>Autorizzazione Ministeriale N. 12345/A</p>
+            </div>
+            
+            <div class="certificazione">
+                <div class="certificazione-icon"></div>
+                <h4>QUALITÀ GARANTITA</h4>
+                <p>ISO 9001:2015</p>
+            </div>
+            
+            <div class="certificazione">
+                <div class="certificazione-icon"></div>
+                <h4>SICUREZZA VERIFICATA</h4>
+                <p>Controlli di qualità certificati</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">ARMERIA NAZIONALE</div>
+        <div class="footer-info">
+            <p>&copy; 2025 - Tutti i diritti riservati</p>
+            <p>Vendita riservata ai possessori di porto d'armi</p>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="contatti.js"></script>
+</body>
+</html>
