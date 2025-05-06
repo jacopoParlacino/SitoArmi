@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkoutBtn = document.getElementById('checkout');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     
+    // Verifica che gli elementi esistano
+    if (!cartItems || !emptyCartMessage || !cartTotalAmount) {
+        console.log("Elementi del carrello non trovati nella pagina corrente");
+        return; // Esci dalla funzione se non siamo nella pagina del carrello
+    }
+    
     // Carrello
     let cart = [];
     
@@ -23,8 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Mostra o nascondi il messaggio "carrello vuoto"
         if (cart.length === 0) {
             emptyCartMessage.style.display = 'block';
-            cartTotalAmount.textContent = '€0.00';
-            return;
         } else {
             emptyCartMessage.style.display = 'none';
         }
@@ -34,12 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Aggiungi ogni elemento al carrello
         cart.forEach((item, index) => {
-            const li = document.createElement('li');
-            
-            // Calcola il prezzo totale per questo articolo
             const itemTotal = item.price * item.quantity;
             total += itemTotal;
             
+            const li = document.createElement('li');
+            li.className = 'cart-item';
             li.innerHTML = `
                 <div class="item-name">${item.name}</div>
                 <div class="item-quantity">
@@ -130,27 +133,92 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Procedi all'acquisto
-    // Gestione del pulsante "PROCEDI ALL'ACQUISTO"
-    document.getElementById('checkout').addEventListener('click', function() {
+    function checkout() {
         // Verifica se ci sono elementi nel carrello
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        if (cartItems.length === 0) {
+        if (cart.length === 0) {
             alert('Il carrello è vuoto. Aggiungi prodotti per procedere all\'acquisto.');
             return;
         }
         
         // Reindirizza alla pagina di acquisto
         window.location.href = 'acquisto.html';
-    });
+    }
     
     // Aggiungi event listener ai pulsanti
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', addToCart);
-    });
+    if (addToCartButtons) {
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', addToCart);
+        });
+    }
     
-    clearCartBtn.addEventListener('click', clearCart);
-    checkoutBtn.addEventListener('click', checkout);
+    if (clearCartBtn) {
+        clearCartBtn.addEventListener('click', clearCart);
+    }
+    
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', checkout);
+    }
     
     // Inizializza la visualizzazione del carrello
     updateCartDisplay();
 });
+
+// Aggiungi questa funzione al tuo file main.js
+function mostraMessaggioUscita(event) {
+  // Verifica se l'utente sta cercando di lasciare la pagina
+  if (event.clientY < 0 || event.clientX < 0 || 
+      event.clientY > window.innerHeight || 
+      event.clientX > window.innerWidth) {
+    
+    // Crea l'elemento del messaggio se non esiste già
+    if (!document.getElementById('messaggio-uscita')) {
+      const messaggioContainer = document.createElement('div');
+      messaggioContainer.id = 'messaggio-uscita';
+      messaggioContainer.innerHTML = `
+        <div class="messaggio-contenuto">
+          <div class="messaggio-header">
+            <div class="symbol-left"></div>
+            <h2>ATTENDERE!</h2>
+            <div class="symbol-right"></div>
+          </div>
+          <p>Sei sicuro di voler abbandonare la gloriosa storia dell'Armeria Nazionale?</p>
+          <p>Ci sono ancora molti prodotti di eccellenza da scoprire!</p>
+          <div class="messaggio-buttons">
+            <button id="resta-button">RESTA CON NOI</button>
+            <button id="esplora-button">ESPLORA I PRODOTTI</button>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(messaggioContainer);
+      
+      // Aggiungi gli event listener ai pulsanti
+      document.getElementById('resta-button').addEventListener('click', function() {
+        messaggioContainer.style.display = 'none';
+      });
+      
+      document.getElementById('esplora-button').addEventListener('click', function() {
+        window.location.href = 'index.html';
+      });
+      
+      // Mostra il messaggio con animazione
+      setTimeout(() => {
+        messaggioContainer.classList.add('visible');
+      }, 10);
+      
+      // Impedisci che il messaggio appaia di nuovo per un po'
+      sessionStorage.setItem('messaggioMostrato', 'true');
+      setTimeout(() => {
+        sessionStorage.removeItem('messaggioMostrato');
+      }, 30000); // 30 secondi
+    }
+  }
+}
+
+// Aggiungi l'event listener solo se non siamo nella pagina di acquisto
+if (!window.location.href.includes('acquisto.html')) {
+  // Verifica se il messaggio è già stato mostrato in questa sessione
+  if (!sessionStorage.getItem('messaggioMostrato')) {
+    document.addEventListener('mouseleave', mostraMessaggioUscita);
+  }
+}

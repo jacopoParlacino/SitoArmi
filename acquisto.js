@@ -65,8 +65,9 @@ function loadCheckoutItems() {
     
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     
-    if (cartItems.length === 0) {
+    if (!cartItems || cartItems.length === 0) {
         // Reindirizza alla home se il carrello è vuoto
+        console.log("Carrello vuoto, reindirizzamento alla home...");
         window.location.href = 'index.html';
         return;
     }

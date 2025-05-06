@@ -1,0 +1,94 @@
+/* Stile per il messaggio di uscita */
+#messaggio-uscita {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+#messaggio-uscita.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.messaggio-contenuto {
+  background-color: #1a1a1a;
+  border: 2px solid #d4af37;
+  width: 80%;
+  max-width: 600px;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.messaggio-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.messaggio-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  margin: 0 15px;
+  color: #d4af37;
+}
+
+.messaggio-header .symbol-left,
+.messaggio-header .symbol-right {
+  width: 40px;
+  height: 40px;
+  background-image: url('simbolo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.messaggio-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.messaggio-buttons button {
+  background-color: #d4af37;
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.messaggio-buttons button:hover {
+  background-color: #f5d76e;
+  transform: scale(1.05);
+}
+
+#resta-button {
+  background-color: #d4af37;
+}
+
+#esplora-button {
+  background-color: #8b0000;
+  color: #fff;
+}
+
+#esplora-button:hover {
+  background-color: #a52a2a;
+}
