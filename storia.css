@@ -1,0 +1,380 @@
+/* Stile Fascista Moderno - Storia dell'Armeria Nazionale */
+
+:root {
+  --color-black: #000000;
+  --color-red: #8B0000;
+  --color-gold: #D4AF37;
+  --color-cream: #F5F5DC;
+  --color-gray: #333333;
+  --color-white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-black);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Elementi decorativi fascisti */
+.fascio-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.fascio-left, .fascio-right {
+  position: absolute;
+  width: 80px;
+  height: 100%;
+  background-image: url('https://via.placeholder.com/80x500');
+  background-repeat: repeat-y;
+  opacity: 0.15;
+}
+
+.fascio-left {
+  left: 0;
+}
+
+.fascio-right {
+  right: 0;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://via.placeholder.com/1920x1080');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  z-index: -2;
+}
+
+/* Header e navigazione */
+header {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0;
+  position: relative;
+}
+
+.header-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+  background-color: var(--color-red);
+  border-bottom: 5px solid var(--color-gold);
+}
+
+.header-banner h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 5px;
+  text-align: center;
+  margin: 0;
+  text-shadow: 2px 2px 0 var(--color-black);
+}
+
+.tagline {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-top: 0.5rem;
+  color: var(--color-cream);
+}
+
+.symbol-left, .symbol-right {
+  position: absolute;
+  width: 60px;
+  height: 100px;
+  background-image: url('https://via.placeholder.com/60x100');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.symbol-left {
+  left: 5%;
+}
+
+.symbol-right {
+  right: 5%;
+}
+
+.main-nav {
+  background-color: var(--color-black);
+  padding: 1rem 0;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 3rem;
+}
+
+.main-nav a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  transition: color 0.3s;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+}
+
+.main-nav a:hover, .main-nav a.active {
+  color: var(--color-gold);
+  border-bottom: 2px solid var(--color-gold);
+}
+
+/* Contenuto principale */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.storia-container {
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Timeline */
+.timeline {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--color-red);
+  margin: 2rem 0;
+  z-index: 1;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: -15px;
+  width: 35px;
+  height: 35px;
+  background-color: var(--color-gold);
+  border: 3px solid var(--color-black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#marker-1922 { left: 10%; }
+#marker-1935 { left: 35%; }
+#marker-1940 { left: 60%; }
+#marker-1943 { left: 85%; }
+
+/* Sezioni della storia */
+.storia-section {
+  margin: 6rem 0;
+  position: relative;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-left: 5px solid var(--color-red);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.storia-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-red);
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.anno-badge {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-black);
+  color: var(--color-gold);
+  padding: 0.5rem 1.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.storia-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.storia-content.full-width {
+  flex-direction: column;
+  text-align: center;
+}
+
+.storia-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.storia-image img {
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--color-black);
+  box-shadow: 5px 5px 0 var(--color-red);
+}
+
+.image-caption {
+  text-align: center;
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.storia-text {
+  flex: 1;
+}
+
+.storia-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+blockquote.quote {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: var(--color-cream);
+  border-left: 5px solid var(--color-gold);
+  font-style: italic;
+  position: relative;
+}
+
+blockquote.quote::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 4rem;
+  color: var(--color-red);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+.quote-author {
+  display: block;
+  text-align: right;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.cta-button {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.torna-home {
+  display: inline-block;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+}
+
+.torna-home:hover {
+  background-color: var(--color-black);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 5px solid var(--color-gold);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  color: var(--color-gold);
+}
+
+.footer-info {
+  text-align: center;
+}
+
+.footer-info p {
+  margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .storia-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .storia-image {
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .header-banner h1 {
+    font-size: 2.5rem;
+  }
+  
+  .symbol-left, .symbol-right {
+    display: none;
+  }
+  
+  .main-nav ul {
+    gap: 1rem;
+  }
+  
+  .main-nav a {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
