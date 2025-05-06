@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEGOZIO ARMI</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="fascio-container">
+    <div class="fascio-left">
+    </div>
+    <div class="fascio-right">
+    </div>
+</div>
+
+<header>
+    <div class="header-banner">
+        <div class="symbol-left"></div>
+        <h1>ARMERIA NAZIONALE</h1>
+        <div class="symbol-right"></div>
+        <div class="motto">FORZA • ONORE • TRADIZIONE</div>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#">STORIA</a></li>
+            <li><a href="#">CONTATTI</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>POTENZA E PRECISIONE</h2>
+            <p>Armi di qualità superiore per il vero patriota</p>
+        </div>
+    </section>
+
+    <section class="prodotti">
+        <h2>ARMAMENTI SELEZIONATI</h2>
+
+        <div class="category-tabs">
+            <button class="category-tab active" data-category="armi">ARMI</button>
+            <button class="category-tab" data-category="munizioni">MUNIZIONI</button>
+            <button class="category-tab" data-category="equipaggiamento">EQUIPAGGIAMENTO</button>
+        </div>
+
+        <div class="product-grid category-content active" id="armi-content">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="pistola.jpeg" alt="pistola" />
+                </div>
+                <div class="product-info">
+                    <h3>Laugo Arms Alien</h3>
+                    <p>Pistola semiautomatica rivoluzionaria, con asse di volata bassissimo e rinculo controllato a gas.</p>
+                    <p class="price">€ 5.490</p>
+                    <div class="product-actions">
+                        <a href="pistola.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="laugo arms alien">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="m4 carabine.jpeg" alt="M4 CARABINE" />
+                </div>
+                <div class="product-info">
+                    <h3>M4 CARABINE</h3>
+                    <p>Carabina leggera e versatile, ideale per combattimento urbano e operazioni militari.</p>
+                    <p class="price">€ 2.500</p>
+                    <div class="product-actions">
+                        <a href="M4-CARABINE.html " class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="m4 carabine">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Benelli M4.webp" alt="Benelli M4" />
+                </div>
+                <div class="product-info">
+                    <h3>Benelli M4 Super 90</h3>
+                    <p>Fucile a pompa semiautomatico di produzione italiana, utilizzato dalle forze speciali di tutto il mondo.</p>
+                    <p class="price">€ 1.950</p>
+                    <div class="product-actions">
+                        <a href="Benelli-M4.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="benelli m4">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Beretta ARX160.jpg" alt="Beretta ARX160" />
+                </div>
+                <div class="product-info">
+                    <h3>Beretta ARX160</h3>
+                    <p>Fucile d'assalto italiano di ultima generazione, modulare e adattabile a qualsiasi scenario operativo.</p>
+                    <p class="price">€ 3.200</p>
+                    <div class="product-actions">
+                        <a href="Beretta-ARX160.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="beretta arx160">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Glock 17.jpg" alt="Glock 17" />
+                </div>
+                <div class="product-info">
+                    <h3>Glock 17 Gen5</h3>
+                    <p>Pistola semiautomatica affidabile e robusta, standard per forze dell'ordine e militari.</p>
+                    <p class="price">€ 750</p>
+                    <div class="product-actions">
+                        <a href="Glock-17.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="glock 17">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Barrett M82A1.jpg" alt="Barrett M82" />
+                </div>
+                <div class="product-info">
+                    <h3>Barrett M82A1</h3>
+                    <p>Fucile di precisione anti-materiale calibro .50 BMG, per operazioni a lunghissima distanza.</p>
+                    <p class="price">€ 12.500</p>
+                    <div class="product-actions">
+                        <a href="Barrett-M82A1.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="barrett m82">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="product-grid category-content" id="munizioni-content">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="9mm.jpg" alt="Munizioni 9mm" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni 9x19mm Parabellum</h3>
+                    <p>Confezione da 50 cartucce 9mm FMJ, ideali per addestramento e tiro sportivo.</p>
+                    <p class="price">€ 25</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-product="munizioni 9mm">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="5.56mm.jpeg" alt="Munizioni 5.56" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni 5.56x45mm NATO</h3>
+                    <p>Confezione da 20 cartucce 5.56mm, compatibili con M4 e altri fucili d'assalto NATO.</p>
+                    <p class="price">€ 18</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-product="munizioni 5.56">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="calibro 12.jpg" alt="Munizioni 12 Gauge" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni Calibro 12</h3>
+                    <p>Confezione da 25 cartucce calibro 12, pallettoni per fucili a pompa e semiautomatici.</p>
+                    <p class="price">€ 22</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-product="munizioni calibro 12">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="50 BMG.jpeg" alt="Munizioni .50 BMG" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni .50 BMG</h3>
+                    <p>Confezione da 10 cartucce .50 BMG, per fucili anti-materiale come il Barrett M82.</p>
+                    <p class="price">€ 85</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-product="munizioni 50bmg">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="45 ACP.jpeg" alt="Munizioni .45 ACP" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni .45 ACP</h3>
+                    <p>Confezione da 50 cartucce .45 ACP, potenti e affidabili per pistole di grosso calibro.</p>
+                    <p class="price">€ 35</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-product="munizioni 45acp">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="product-grid category-content" id="equipaggiamento-content">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Giubbotto Antiproiettile Livello IV.jpeg" alt="Giubbotto Antiproiettile" />
+                </div>
+                <div class="product-info">
+                    <h3>Giubbotto Antiproiettile Livello IV</h3>
+                    <p>Giubbotto balistico con protezione livello IV, resistente a proiettili perforanti fino a 7.62mm.</p>
+                    <p class="price">€ 1.200</p>
+                    <div class="product-actions">
+                        <a href="dettagli-giubbotto.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="giubbotto antiproiettile">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="elmetto.jpg" alt="Elmetto Balistico" />
+                </div>
+                <div class="product-info">
+                    <h3>Elmetto Balistico Tattico</h3>
+                    <p>Elmetto in kevlar con sistema di aggancio per accessori, protezione balistica certificata.</p>
+                    <p class="price">€ 450</p>
+                    <div class="product-actions">
+                        <a href="dettagli-Elmetto Balistico Tattico.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="elmetto balistico">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="uniforme.png" alt="Uniforme Tattica" />
+                </div>
+                <div class="product-info">
+                    <h3>Uniforme Tattica Completa</h3>
+                    <p>Set completo di uniforme tattica in tessuto ripstop, resistente e confortevole per operazioni prolungate.</p>
+                    <p class="price">€ 280</p>
+                    <div class="product-actions">
+                        <a href="#" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="uniforme tattica">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="stivali.jpg" alt="Stivali Tattici" />
+                </div>
+                <div class="product-info">
+                    <h3>Stivali Tattici Professionali</h3>
+                    <p>Stivali tattici impermeabili con suola antiscivolo e rinforzi in punta, ideali per operazioni in ogni terreno.</p>
+                    <p class="price">€ 190</p>
+                    <div class="product-actions">
+                        <a href="#" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="stivali tattici">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="guanti.jpg" alt="Guanti Tattici" />
+                </div>
+                <div class="product-info">
+                    <h3>Guanti Tattici Rinforzati</h3>
+                    <p>Guanti tattici con protezione nocche e palmo rinforzato, sensibilità tattile per uso armi.</p>
+                    <p class="price">€ 45</p>
+                    <div class="product-actions">
+                        <a href="#" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="guanti tattici">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="fondina.jpg" alt="Fondina Tattica" />
+                </div>
+                <div class="product-info">
+                    <h3>Fondina Tattica Modulare</h3>
+                    <p>Fondina tattica di livello III con ritenzione attiva, compatibile con sistemi MOLLE.</p>
+                    <p class="price">€ 120</p>
+                    <div class="product-actions">
+                        <a href="#" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="fondina tattica">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cart">
+        <h2>CARRELLO D'ACQUISTO</h2>
+        <div id="cart-content">
+            <ul id="cart-items">
+                <!-- Gli elementi del carrello verranno inseriti qui dinamicamente -->
+            </ul>
+            <div class="empty-cart-message" id="empty-cart-message">Il tuo carrello è vuoto. Aggiungi prodotti per procedere all'acquisto.</div>
+            <div class="cart-total">Totale: <span id="cart-total-amount">€0.00</span></div>
+            <div class="cart-actions">
+                <button class="clear-cart" id="clear-cart">SVUOTA CARRELLO</button>
+                <button class="checkout" id="checkout">PROCEDI ALL'ACQUISTO</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">ARMERIA NAZIONALE</div>
+        <div class="footer-info">
+            <p>&copy; 2025 - Tutti i diritti riservati</p>
+            <p>Vendita riservata ai possessori di porto d'armi</p>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+    // Script per gestire le tab delle categorie
+    document.addEventListener('DOMContentLoaded', function() {
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const categoryContents = document.querySelectorAll('.category-content');
+        
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Rimuovi la classe active da tutte le tab
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                // Aggiungi la classe active alla tab cliccata
+                this.classList.add('active');
+                
+                // Nascondi tutti i contenuti
+                categoryContents.forEach(content => content.classList.remove('active'));
+                
+                // Mostra il contenuto corrispondente alla tab cliccata
+                const categoryToShow = this.dataset.category;
+                document.getElementById(`${categoryToShow}-content`).classList.add('active');
+            });
+        });
+    });
+</script>
+</body>
+</html>

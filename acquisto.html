@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completa l'Acquisto | ARMERIA NAZIONALE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="acquisto.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-banner">
+        <div class="symbol-left"></div>
+        <h1>ARMERIA NAZIONALE</h1>
+        <div class="symbol-right"></div>
+        <div class="motto">CREDERE • OBBEDIRE • COMBATTERE</div>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#">STORIA</a></li>
+            <li><a href="#">CONTATTI</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="checkout-section">
+        <h2>COMPLETA IL TUO ACQUISTO</h2>
+        
+        <div class="checkout-container">
+            <div class="order-summary">
+                <h3>RIEPILOGO ORDINE</h3>
+                <div id="checkout-items">
+                    <!-- 
+                    i elementi del carrello verranno inseriti qui dinamicamente -->
+                </div>
+                <div class="order-total">
+                    <div class="subtotal">Subtotale: <span id="subtotal-amount">€0.00</span></div>
+                    <div class="shipping">Spedizione: <span id="shipping-amount">€15.00</span></div>
+                    <div class="tax">IVA (22%): <span id="tax-amount">€0.00</span></div>
+                    <div class="total">TOTALE: <span id="total-amount">€0.00</span></div>
+                </div>
+            </div>
+            
+            <div class="checkout-form">
+                <h3>DATI PERSONALI</h3>
+                <form id="purchase-form">
+                    <div class="form-section">
+                        <h4>INFORMAZIONI PERSONALI</h4>
+                        <div class="form-group">
+                            <label for="nome">Nome *</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cognome">Cognome *</label>
+                            <input type="text" id="cognome" name="cognome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Telefono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>DOCUMENTI RICHIESTI</h4>
+                        <div class="form-group">
+                            <label for="porto-armi">Numero Porto d'Armi *</label>
+                            <input type="text" id="porto-armi" name="porto-armi" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="scadenza-porto">Data Scadenza Porto d'Armi *</label>
+                            <input type="date" id="scadenza-porto" name="scadenza-porto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="documento-identita">Documento d'Identità *</label>
+                            <input type="file" id="documento-identita" name="documento-identita" accept="image/*, application/pdf" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="porto-armi-file">Porto d'Armi (scansione) *</label>
+                            <input type="file" id="porto-armi-file" name="porto-armi-file" accept="image/*, application/pdf" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>INDIRIZZO DI SPEDIZIONE</h4>
+                        <div class="form-group">
+                            <label for="indirizzo">Indirizzo *</label>
+                            <input type="text" id="indirizzo" name="indirizzo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="citta">Città *</label>
+                            <input type="text" id="citta" name="citta" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cap">CAP *</label>
+                            <input type="text" id="cap" name="cap" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="provincia">Provincia *</label>
+                            <input type="text" id="provincia" name="provincia" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>METODO DI PAGAMENTO</h4>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <input type="radio" id="carta" name="payment" value="carta" checked>
+                                <label for="carta">Carta di Credito</label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" id="bonifico" name="payment" value="bonifico">
+                                <label for="bonifico">Bonifico Bancario</label>
+                            </div>
+                        </div>
+                        
+                        <div id="carta-details" class="payment-details">
+                            <div class="form-group">
+                                <label for="card-number">Numero Carta *</label>
+                                <input type="text" id="card-number" name="card-number">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-name">Intestatario Carta *</label>
+                                <input type="text" id="card-name" name="card-name">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="expiry">Scadenza (MM/AA) *</label>
+                                    <input type="text" id="expiry" name="expiry" placeholder="MM/AA">
+                                </div>
+                                <div class="form-group half">
+                                    <label for="cvv">CVV *</label>
+                                    <input type="text" id="cvv" name="cvv" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="bonifico-details" class="payment-details" style="display: none;">
+                            <div class="bank-details">
+                                <p>Effettua il bonifico alle seguenti coordinate bancarie:</p>
+                                <p><strong>Intestatario:</strong> Armeria Nazionale S.r.l.</p>
+                                <p><strong>IBAN:</strong> IT12A0123456789000000123456</p>
+                                <p><strong>Causale:</strong> <span id="order-reference">ORD-</span></p>
+                                <p class="note">L'ordine verrà processato solo dopo la ricezione del pagamento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">Accetto i <a href="#">Termini e Condizioni</a> e confermo di essere in possesso di regolare porto d'armi *</label>
+                        </div>
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">Accetto la <a href="#">Privacy Policy</a> *</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <a href="index.html" class="back-button">TORNA AL CARRELLO</a>
+                        <button type="submit" class="submit-button">CONFERMA ACQUISTO</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">ARMERIA NAZIONALE</div>
+        <div class="footer-info">
+            <p>&copy; 2025 - Tutti i diritti riservati</p>
+            <p>Vendita riservata ai possessori di porto d'armi</p>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="acquisto.js"></script>
+</body>
+</html>
