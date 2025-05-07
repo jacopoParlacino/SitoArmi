@@ -918,3 +918,15 @@ footer {
         font-size: 1.2rem;
     }
 }
+.category-tab.scopri-link {
+    background-color: #990000; /* Un rosso più scuro per distinguerlo */
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-tab.scopri-link:hover {
+    background-color: #cc0000;
+}

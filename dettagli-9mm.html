@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munizioni 9mm Parabellum FMJ | Armeria Nazionale</title>
+    <link rel="stylesheet" href="catalogo.css" />
+    <link rel="stylesheet" href="dettagli-prodotto.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="background-image"></div>
+
+<header>
+    <div class="header-banner">
+        <div class="logo-container">
+            <img src="logoArmeria.jpeg" alt="Armeria Nazionale Logo" class="header-logo">
+        </div>
+        <div class="symbol-left"></div>
+        <h1>DETTAGLI PRODOTTO</h1>
+        <div class="symbol-right"></div>
+        <div class="motto">FORZA • ONORE • TRADIZIONE</div>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="catalogo.html">CATALOGO</a></li>
+            <li><a href="munizioni.html">MUNIZIONI</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> &gt; 
+        <a href="catalogo.html">Catalogo</a> &gt; 
+        <a href="munizioni.html">Munizioni</a> &gt; 
+        <span>9mm Parabellum FMJ</span>
+    </div>
+
+    <section class="prodotto-dettaglio">
+        <div class="prodotto-container">
+            <div class="prodotto-gallery">
+                <div class="prodotto-immagine-principale">
+                    <img src="9mm.jpg" alt="Munizioni 9mm Parabellum FMJ" id="immagine-principale">
+                </div>
+                <div class="prodotto-immagini-secondarie">
+                    <img src="9mm.jpg" alt="Munizioni 9mm vista frontale" onclick="cambiaImmagine(this)">
+                    <img src="9mm-side.jpg" alt="Munizioni 9mm vista laterale" onclick="cambiaImmagine(this)">
+                    <img src="9mm-box.jpg" alt="Confezione munizioni 9mm" onclick="cambiaImmagine(this)">
+                </div>
+            </div>
+            
+            <div class="prodotto-info">
+                <h2>Munizioni 9mm Parabellum FMJ</h2>
+                <div class="prodotto-codice">Codice prodotto: MUN-9MM-FMJ-50</div>
+                <div class="prodotto-disponibilita disponibile">Disponibilità: In stock</div>
+                
+                <div class="prodotto-prezzo">
+                    <span class="prezzo-attuale">€ 15,00</span>
+                    <span class="prezzo-quantita">Confezione da 50 pezzi</span>
+                </div>
+                
+                <div class="prodotto-descrizione">
+                    <p>Le munizioni 9x19mm Parabellum con punta Full Metal Jacket (FMJ) sono la scelta ideale per l'addestramento, il tiro sportivo e le competizioni. Queste cartucce offrono un'eccellente precisione, affidabilità e prestazioni costanti.</p>
+                    
+                    <p>Prodotte secondo rigorosi standard qualitativi, queste munizioni garantiscono un'alimentazione fluida e un'espulsione affidabile in tutte le pistole calibro 9mm Parabellum.</p>
+                </div>
+                
+                <div class="prodotto-caratteristiche">
+                    <h3>CARATTERISTICHE TECNICHE</h3>
+                    <ul>
+                        <li><strong>Calibro:</strong> 9x19mm Parabellum (9mm Luger)</li>
+                        <li><strong>Tipo di punta:</strong> Full Metal Jacket (FMJ)</li>
+                        <li><strong>Peso del proiettile:</strong> 124 grani (8,0 g)</li>
+                        <li><strong>Velocità alla bocca:</strong> 360 m/s</li>
+                        <li><strong>Energia alla bocca:</strong> 520 Joule</li>
+                        <li><strong>Bossolo:</strong> Ottone</li>
+                        <li><strong>Innesco:</strong> Boxer, non corrosivo</li>
+                        <li><strong>Quantità per confezione:</strong> 50 cartucce</li>
+                    </ul>
+                </div>
+                
+                <div class="prodotto-compatibilita">
+                    <h3>COMPATIBILITÀ</h3>
+                    <p>Compatibile con tutte le armi in calibro 9x19mm Parabellum, incluse:</p>
+                    <ul>
+                        <li>Beretta 92/M9</li>
+                        <li>Glock 17, 19, 26, 34</li>
+                        <li>SIG Sauer P226, P320</li>
+                        <li>CZ 75, P-10</li>
+                        <li>Walther P99, PPQ</li>
+                        <li>H&K VP9, P30</li>
+                        <li>E molte altre pistole e carabine in calibro 9mm</li>
+                    </ul>
+                </div>
+                
+                <div class="prodotto-acquisto">
+                    <div class="prodotto-quantita">
+                        <label for="quantita">Quantità:</label>
+                        <div class="quantita-controlli">
+                            <button class="quantita-btn" onclick="decrementaQuantita()">-</button>
+                            <input type="number" id="quantita" value="1" min="1" max="10">
+                            <button class="quantita-btn" onclick="incrementaQuantita()">+</button>
+                        </div>
+                    </div>
+                    
+                    <button class="add-to-cart-btn" onclick="aggiungiAlCarrello()">AGGIUNGI AL CARRELLO</button>
+                </div>
+                
+                <div class="prodotto-note">
+                    <p><strong>Nota:</strong> La vendita di munizioni è soggetta alle normative vigenti. È richiesta la presentazione di porto d'armi o documento equipollente al momento dell'acquisto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="prodotti-correlati">
+        <h2>PRODOTTI CORRELATI</h2>
+        <div class="correlati-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="9mm-jhp.jpg" alt="Munizioni 9mm JHP" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni 9mm JHP Premium</h3>
+                    <p>Munizioni 9mm Jacketed Hollow Point di qualità premium per difesa personale.</p>
+                    <p class="price">€ 25 / 50pz</p>
+                    <div class="product-actions">
+                        <a href="dettagli-9mm-jhp.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="9mm jhp premium">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Glock 17.jpg" alt="Glock 17" />
+                </div>
+                <div class="product-info">
+                    <h3>Glock 17 Gen5</h3>
+                    <p>Pistola semiautomatica affidabile e robusta, standard per forze dell'ordine e militari.</p>
+                    <p class="price">€ 750</p>
+                    <div class="product-actions">
+                        <a href="Glock-17.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="glock 17">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="caricatore-9mm.jpg" alt="Caricatore 9mm" />
+                </div>
+                <div class="product-info">
+                    <h3>Caricatore Glock 9mm</h3>
+                    <p>Caricatore originale per pistole Glock in calibro 9mm, capacità 17 colpi.</p>
+                    <p class="price">€ 35</p>
+                    <div class="product-actions">
+                        <a href="dettagli-caricatore-glock.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="caricatore glock">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="logoArmeria.jpeg" alt="Armeria Nazionale Logo" class="footer-logo-img">
+            ARMERIA NAZIONALE
+        </div>
+        <div class="footer-info">
+            <p>Via delle Armi 123, 00100 Roma</p>
+            <p>Tel: 06 1234567 | Email: info@armerianazionale.it</p>
+            <p>P.IVA: 12345678901 | © 2023 Armeria Nazionale - Tutti i diritti riservati</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function cambiaImmagine(img) {
+        document.getElementById('immagine-principale').src = img.src;
+    }
+    
+    function incrementaQuantita() {
+        const input = document.getElementById('quantita');
+        const valore = parseInt(input.value);
+        if (valore < parseInt(input.max)) {
+            input.value = valore + 1;
+        }
+    }
+    
+    function decrementaQuantita() {
+        const input = document.getElementById('quantita');
+        const valore = parseInt(input.value);
+        if (valore > parseInt(input.min)) {
+            input.value = valore - 1;
+        }
+    }
+    
+    function aggiungiAlCarrello() {
+        const quantita = document.getElementById('quantita').value;
+        alert(`Hai aggiunto ${quantita} confezioni di Munizioni 9mm Parabellum FMJ al carrello!`);
+        // Qui puoi implementare la logica del carrello
+    }
+</script>
+</body>
+</html>

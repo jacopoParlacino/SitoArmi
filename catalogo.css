@@ -1,0 +1,618 @@
+/* Stile generale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Immagine di sfondo */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('logo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Per assicurarti che il contenuto sia leggibile sopra l'immagine di sfondo */
+body {
+    position: relative;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Header */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    border-bottom: 2px solid #990000;
+}
+
+.header-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+.header-banner h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 5px;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(153, 0, 0, 0.7);
+}
+
+.symbol-left, .symbol-right {
+    width: 50px;
+    height: 50px;
+    background-image: url('symbol.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.symbol-left {
+    left: 20%;
+}
+
+.symbol-right {
+    right: 20%;
+    transform: scaleX(-1);
+}
+
+.motto {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    color: #990000;
+    margin-top: 10px;
+    letter-spacing: 3px;
+}
+
+/* Navigazione */
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.main-nav li {
+    margin: 0 20px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #990000;
+}
+
+/* Sezione introduttiva */
+.catalogo-intro {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 40px;
+}
+
+.intro-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: #990000;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Sezione categorie */
+.catalogo-categorie {
+    padding: 40px 20px;
+}
+
+.catalogo-categorie h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: #990000;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.categoria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.categoria-card {
+    background-color: rgba(30, 30, 30, 0.9);
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.categoria-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.categoria-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.categoria-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.categoria-card:hover .categoria-image img {
+    transform: scale(1.05);
+}
+
+.categoria-info {
+    padding: 20px;
+}
+
+.categoria-info h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.categoria-info p {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 20px;
+    min-height: 80px;
+}
+
+.categoria-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.details-button {
+    display: inline-block;
+    background-color: #990000;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.details-button:hover {
+    background-color: #cc0000;
+}
+
+/* Sezione prodotti in evidenza */
+.prodotti-in-evidenza {
+    padding: 40px 20px 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 40px;
+}
+
+.prodotti-in-evidenza h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: #990000;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: rgba(30, 30, 30, 0.9);
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.product-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-bottom: 15px;
+    min-height: 60px;
+}
+
+.price {
+    font-size: 1.3rem !important;
+    color: #990000 !important;
+    font-weight: 700;
+    margin-bottom: 15px !important;
+    min-height: auto !important;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-to-cart {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+}
+
+.add-to-cart:hover {
+    background-color: #555;
+}
+
+.view-all-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-all-button .details-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    padding: 30px 0;
+    border-top: 2px solid #990000;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Logo nel footer */
+.footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo-img {
+    max-width: 60px; /* Ridotto da 80px */
+    height: auto;
+    margin-bottom: 8px; /* Ridotto da 10px */
+    filter: drop-shadow(0 0 5px rgba(153, 0, 0, 0.5));
+}
+
+.footer-info p {
+    color: #777;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-banner h1 {
+        font-size: 2.5rem;
+    }
+    
+    .symbol-left, .symbol-right {
+        display: none;
+    }
+    
+    .categoria-grid, .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .categoria-info p {
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main-nav li {
+        margin: 10px 0;
+    }
+    
+    .categoria-grid, .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .categoria-info p {
+        min-height: auto;
+    }
+}
+
+/* Stile per il carosello di immagini */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Pulsanti Avanti/Indietro */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(153, 0, 0, 0.8);
+}
+
+/* Animazione di dissolvenza */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Assicurati che la prima slide sia visibile all'inizio */
+.slide:first-child {
+    display: block;
+}
+
+/* Logo nell'header */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.header-logo {
+    max-width: 100px; /* Modificato da 150px a 100px per dimensioni medie */
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(153, 0, 0, 0.7));
+}
+
+/* Adattamento per dispositivi mobili */
+@media (max-width: 768px) {
+    .header-logo {
+        max-width: 80px; /* Modificato da 120px a 80px */
+    }
+}
+
+/* Stili per la pagina delle munizioni */
+.filtri-munizioni {
+    padding: 20px;
+    background-color: rgba(20, 20, 20, 0.8);
+    margin-bottom: 30px;
+    border-radius: 5px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+.filtri-container {
+    text-align: center;
+}
+
+.filtri-container h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: #990000;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.filtri-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.filtro-btn {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    border-radius: 3px;
+}
+
+.filtro-btn:hover {
+    background-color: #555;
+}
+
+.filtro-btn.active {
+    background-color: #990000;
+}
+
+.info-munizioni {
+    padding: 40px 20px;
+    background-color: rgba(20, 20, 20, 0.8);
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+.info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-container h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: #990000;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+.info-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.info-card p {
+    font-size: 1rem;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+/* Responsive per la pagina munizioni */
+@media (max-width: 768px) {
+    .filtri-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filtro-btn {
+        width: 80%;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}

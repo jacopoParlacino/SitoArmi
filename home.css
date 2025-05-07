@@ -1,0 +1,457 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  body.loaded {
+    opacity: 1;
+  }
+  
+  /* Elementi decorativi */
+  .fascio-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .fascio-left, .fascio-right {
+    position: absolute;
+    width: 80px;
+    height: 100%;
+    background-repeat: repeat-y;
+    background-size: contain;
+  }
+  
+  .fascio-left {
+    left: 0;
+    background-image: url('svastica.png');
+  }
+  
+  .fascio-right {
+    right: 0;
+    background-image: url('svastica.png');
+  }
+  
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-image: url('dux.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    filter: blur(3px);
+  }
+  
+  /* Simboli geometrici decorativi */
+  .symbol-left, .symbol-right {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: linear-gradient(45deg, #000 25%, transparent 25%),
+                      linear-gradient(135deg, #000 25%, transparent 25%),
+                      linear-gradient(225deg, #000 25%, transparent 25%),
+                      linear-gradient(315deg, #000 25%, transparent 25%);
+    background-size: 20px 20px;
+    background-color: #900;
+    margin: 0 20px;
+    transform: rotate(45deg);
+    vertical-align: middle;
+  }
+  
+  /* Header */
+  header {
+    background-color: #000;
+    color: #fff;
+    border-bottom: 5px solid #900;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('armeria fascista.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+  }
+  
+  .header-banner {
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #900;
+    max-width: 90%;
+    width: 800px;
+    animation: fadeInUp 1.5s ease;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    letter-spacing: 5px;
+    margin: 0;
+    display: inline-block;
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    margin-top: 1rem;
+    color: #ddd;
+    font-weight: 500;
+  }
+  
+  /* Contenuto principale */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* Sezione Introduzione */
+  .intro-section {
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .intro-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #900;
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border: 2px solid;
+  }
+  
+  .cta-button.primary {
+    background-color: #900;
+    color: #fff;
+    border-color: #900;
+  }
+  
+  .cta-button.primary:hover {
+    background-color: #700;
+    border-color: #700;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cta-button.secondary {
+    background-color: transparent;
+    color: #900;
+    border-color: #900;
+  }
+  
+  .cta-button.secondary:hover {
+    background-color: rgba(153, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sezione Caratteristiche */
+  .features-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 5rem 0;
+    flex-wrap: wrap;
+  }
+  
+  .feature {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background-color: #900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+  }
+  
+  .quality-icon::before {
+    content: '★';
+  }
+  
+  .tradition-icon::before {
+    content: '✦';
+  }
+  
+  .service-icon::before {
+    content: '♦';
+  }
+  
+  .feature h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #900;
+  }
+  
+  .feature p {
+    color: #666;
+  }
+  
+  /* Sezione Categorie */
+  .categories-section {
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .categories-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #900;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .categories-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #900;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .category-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  
+  .category-card.hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-image {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  
+  .category-card.hover .category-image img {
+    transform: scale(1.1);
+  }
+  
+  .category-info {
+    padding: 1.5rem;
+  }
+  
+  .category-info h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #900;
+  }
+  
+  .category-info p {
+    color: #666;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem;
+    border-top: 5px solid #900;
+    margin-top: 5rem;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+  }
+  
+  .footer-info p {
+    margin-bottom: 0.5rem;
+    color: #ddd;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+    }
+    
+    .intro-content h2 {
+      font-size: 2.5rem;
+    }
+    
+    .features-section {
+      flex-direction: column;
+    }
+    
+    .feature {
+      margin-bottom: 2rem;
+    }
+    
+    .fascio-left, .fascio-right {
+      width: 40px;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .cta-button {
+      width: 100%;
+    }
+  }
+  /* Stile per i collegamenti alle categorie */
+.category-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(153, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .category-card:hover .category-overlay {
+    opacity: 1;
+  }
+  
+  .view-category {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .category-image {
+    position: relative;
+  }

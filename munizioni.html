@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munizioni | Armeria Nazionale</title>
+    <link rel="stylesheet" href="catalogo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="background-image"></div>
+
+<header>
+    <div class="header-banner">
+        <div class="logo-container">
+            <img src="logoArmeria.jpeg" alt="Armeria Nazionale Logo" class="header-logo">
+        </div>
+        <div class="symbol-left"></div>
+        <h1>MUNIZIONI</h1>
+        <div class="symbol-right"></div>
+        <div class="motto">FORZA • ONORE • TRADIZIONE</div>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="catalogo.html">HOME</a></li>
+            <li><a href="catalogo.html">CATALOGO</a></li>
+            <li><a href="storia.html">STORIA</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="catalogo-intro">
+        <div class="intro-content">
+            <h2>MUNIZIONI DI ALTA QUALITÀ</h2>
+            <p>La nostra vasta gamma di munizioni per armi corte e lunghe, dai calibri più comuni ai più specialistici per ogni esigenza.</p>
+        </div>
+    </section>
+
+    <section class="filtri-munizioni">
+        <div class="filtri-container">
+            <h3>FILTRA PER CALIBRO</h3>
+            <div class="filtri-buttons">
+                <button class="filtro-btn active" data-filter="all">TUTTI</button>
+                <button class="filtro-btn" data-filter="9mm">9mm</button>
+                <button class="filtro-btn" data-filter="45acp">.45 ACP</button>
+                <button class="filtro-btn" data-filter="556">5.56mm</button>
+                <button class="filtro-btn" data-filter="762">7.62mm</button>
+                <button class="filtro-btn" data-filter="50bmg">.50 BMG</button>
+                <button class="filtro-btn" data-filter="12ga">12 Gauge</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="prodotti-munizioni">
+        <div class="product-grid">
+            <div class="product-card" data-category="9mm">
+                <div class="product-image">
+                    <img src="9mm.jpg" alt="Munizioni 9mm" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni 9mm Parabellum FMJ</h3>
+                    <p>Munizioni 9x19mm Parabellum con punta Full Metal Jacket, ideali per addestramento e tiro sportivo.</p>
+                    <p class="price">€ 15 / 50pz</p>
+                    <div class="product-actions">
+                        <a href="dettagli-9mm.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="9mm fmj">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="45acp">
+                <div class="product-image">
+                    <img src="45 ACP.jpeg" alt="Munizioni .45 ACP" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni .45 ACP JHP</h3>
+                    <p>Munizioni calibro .45 ACP con punta Jacketed Hollow Point, eccellenti per difesa personale.</p>
+                    <p class="price">€ 22 / 50pz</p>
+                    <div class="product-actions">
+                        <a href="dettagli-45acp.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="45acp jhp">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="556">
+                <div class="product-image">
+                    <img src="5.56mm.jpeg" alt="Munizioni 5.56mm" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni 5.56x45mm NATO</h3>
+                    <p>Munizioni 5.56x45mm NATO standard militare, compatibili con fucili AR-15 e simili.</p>
+                    <p class="price">€ 18 / 30pz</p>
+                    <div class="product-actions">
+                        <a href="dettagli-556.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="556 nato">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="762">
+                <div class="product-image">
+                    <img src="Munizioni 7.62x51mm NATO.jpeg" alt="Munizioni 7.62mm" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni 7.62x51mm NATO</h3>
+                    <p>Munizioni 7.62x51mm NATO per fucili di precisione e armi da battaglia.</p>
+                    <p class="price">€ 25 / 20pz</p>
+                    <div class="product-actions">
+                        <a href="dettagli-762.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="762 nato">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="50bmg">
+                <div class="product-image">
+                    <img src="50BMG.jpeg" alt="Munizioni .50 BMG" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni .50 BMG</h3>
+                    <p>Munizioni calibro .50 BMG per fucili anti-materiale come il Barrett M82.</p>
+                    <p class="price">€ 75 / 10pz</p>
+                    <div class="product-actions">
+                        <a href="dettagli-50bmg.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="50bmg">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="12ga">
+                <div class="product-image">
+                    <img src="Cartucce 12 Gauge Buckshot.jpeg" alt="Munizioni 12 Gauge" />
+                </div>
+                <div class="product-info">
+                    <h3>Cartucce 12 Gauge Buckshot</h3>
+                    <p>Cartucce calibro 12 con pallettoni, ideali per difesa abitativa e caccia.</p>
+                    <p class="price">€ 20 / 25pz</p>
+                    <div class="product-actions">
+                        <a href="dettagli-12ga.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="12ga buckshot">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="9mm">
+                <div class="product-image">
+                    <img src="9mm-jhp.jpg" alt="Munizioni 9mm JHP" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni 9mm JHP Premium</h3>
+                    <p>Munizioni 9mm Jacketed Hollow Point di qualità premium per difesa personale.</p>
+                    <p class="price">€ 25 / 50pz</p>
+                    <div class="product-actions">
+                        <a href="dettagli-9mm-jhp.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="9mm jhp premium">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="556">
+                <div class="product-image">
+                    <img src="556-tracer.jpg" alt="Munizioni 5.56mm Traccianti" />
+                </div>
+                <div class="product-info">
+                    <h3>Munizioni 5.56mm Traccianti</h3>
+                    <p>Munizioni 5.56mm con effetto tracciante, visibili in condizioni di scarsa illuminazione.</p>
+                    <p class="price">€ 30 / 30pz</p>
+                    <div class="product-actions">
+                        <a href="dettagli-556-tracer.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="556 tracer">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="info-munizioni">
+        <div class="info-container">
+            <h2>INFORMAZIONI SULLE MUNIZIONI</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>CONSERVAZIONE</h3>
+                    <p>Le munizioni devono essere conservate in un luogo fresco e asciutto, lontano da fonti di calore e umidità. Si consiglia l'utilizzo di contenitori ermetici per una conservazione ottimale.</p>
+                </div>
+                <div class="info-card">
+                    <h3>TRASPORTO</h3>
+                    <p>Il trasporto di munizioni è regolamentato dalla legge. Assicurati di rispettare tutte le normative vigenti e di trasportare le munizioni in contenitori appositi e separati dalle armi.</p>
+                </div>
+                <div class="info-card">
+                    <h3>COMPATIBILITÀ</h3>
+                    <p>Utilizza sempre munizioni del calibro corretto per la tua arma. L'utilizzo di munizioni non compatibili può causare danni all'arma e gravi rischi per la sicurezza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="view-all-button">
+        <a href="catalogo.html" class="details-button">TORNA AL CATALOGO</a>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="logoArmeria.jpeg" alt="Armeria Nazionale Logo" class="footer-logo-img">
+            ARMERIA NAZIONALE
+        </div>
+        <div class="footer-info">
+            <p>Via delle Armi 123, 00100 Roma</p>
+            <p>Tel: 06 1234567 | Email: info@armerianazionale.it</p>
+            <p>P.IVA: 12345678901 | © 2023 Armeria Nazionale - Tutti i diritti riservati</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Script per il carosello di immagini
+    document.addEventListener('DOMContentLoaded', function() {
+        // Funzione per i filtri delle munizioni
+        const filterButtons = document.querySelectorAll('.filtro-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Rimuovi la classe active da tutti i pulsanti
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Aggiungi la classe active al pulsante cliccato
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                productCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Aggiungi funzionalità ai pulsanti "Acquista"
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const product = this.getAttribute('data-product');
+                alert(`Hai aggiunto ${product} al carrello!`);
+                // Qui puoi implementare la logica del carrello
+            });
+        });
+    });
+</script>
+</body>
+</html>
