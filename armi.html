@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARMERIA NAZIONALE - ARMI</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Armi | Armeria Nazionale</title>
+    <link rel="stylesheet" href="armi.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="background-image"></div>
 
 <header>
     <div class="header-banner">
+        <div class="logo-container">
+            <img src="logoArmeria.jpeg" alt="Armeria Nazionale Logo" class="header-logo">
+        </div>
         <div class="symbol-left"></div>
-        <h1>ARMERIA NAZIONALE</h1>
+        <h1>ARMI</h1>
         <div class="symbol-right"></div>
         <div class="motto">FORZA • ONORE • TRADIZIONE</div>
     </div>
     <nav class="main-nav">
         <ul>
-            <li><a href="catalogo.html">HOME</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="catalogo.html">CATALOGO</a></li>
             <li><a href="storia.html">STORIA</a></li>
             <li><a href="contatti.html">CONTATTI</a></li>
         </ul>
@@ -28,10 +33,10 @@
 </header>
 
 <main>
-    <section class="hero-section">
-        <div class="hero-content">
-            <h2>LE NOSTRE ARMI</h2>
-            <p>Potenza, precisione e affidabilità per ogni esigenza</p>
+    <section class="catalogo-intro">
+        <div class="intro-content">
+            <h2>ARMI DI ALTA QUALITÀ</h2>
+            <p>Esplora la nostra selezione di armi da fuoco di precisione</p>
         </div>
     </section>
 
@@ -39,12 +44,16 @@
         <h2>CATALOGO ARMI</h2>
 
         <div class="category-tabs">
-            <button class="category-tab active" data-category="pistole">PISTOLE</button>
-            <button class="category-tab" data-category="fucili">FUCILI</button>
-            <button class="category-tab" data-category="assalto">ARMI D'ASSALTO</button>
+            <button class="category-tab active" data-category="pistole">PISTOLE SEMIAUTOMATICHE</button>
+            <button class="category-tab" data-category="revolver">REVOLVER</button>
+            <button class="category-tab" data-category="fucili-caccia">FUCILI DA CACCIA</button>
+            <button class="category-tab" data-category="fucili-precisione">FUCILI DI PRECISIONE</button>
+            <button class="category-tab" data-category="fucili-assalto">FUCILI D'ASSALTO</button>
+            <button class="category-tab" data-category="fucili-tattici">FUCILI TATTICI</button>
         </div>
 
         <div class="product-grid category-content active" id="pistole-content">
+            <!-- Mantieni le pistole semiautomatiche esistenti -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="pistola.jpeg" alt="pistola" />
@@ -106,7 +115,44 @@
             </div>
         </div>
         
-        <div class="product-grid category-content" id="fucili-content">
+        <div class="product-grid category-content" id="revolver-content">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="smith-wesson-686.jpg" alt="Smith & Wesson 686" />
+                </div>
+                <div class="product-info">
+                    <h3>Smith & Wesson 686</h3>
+                    <p>Revolver in acciaio inox, calibro .357 Magnum, ideale per tiro sportivo e difesa.</p>
+                    <p class="price">€ 1.150</p>
+                    <div class="product-actions">
+                        <a href="sw686.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="sw686">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Aggiungi altri revolver qui -->
+        </div>
+
+        <div class="product-grid category-content" id="fucili-caccia-content">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="beretta-686.jpg" alt="Beretta 686 Silver Pigeon" />
+                </div>
+                <div class="product-info">
+                    <h3>Beretta 686 Silver Pigeon</h3>
+                    <p>Fucile sovrapposto da caccia, calibro 12, con incisioni classiche e calcio in noce selezionato.</p>
+                    <p class="price">€ 2.450</p>
+                    <div class="product-actions">
+                        <a href="beretta686.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="beretta686">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Aggiungi altri fucili da caccia qui -->
+        </div>
+
+        <div class="product-grid category-content" id="fucili-precisione-content">
+            <!-- Sposta qui i fucili di precisione esistenti come Barrett M82A1 e Accuracy International AX50 -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="Benelli M4.webp" alt="Benelli M4" />

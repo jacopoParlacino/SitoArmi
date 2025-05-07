@@ -32,15 +32,6 @@ body {
   background-size: contain;
 }
 
-.fascio-left {
-  left: 0;
-  background-image: url('../immagini/fascio-sinistro.png');
-}
-
-.fascio-right {
-  right: 0;
-  background-image: url('../immagini/fascio-destro.png');
-}
 
 .background-image {
   position: fixed;
