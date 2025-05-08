@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrello | Armeria Nazionale</title>
+    <link rel="stylesheet" href="catalogo.css" />
+    <link rel="stylesheet" href="munizioni.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Stili per la pagina del carrello */
+        .cart-section {
+            padding: 2rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cart-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #900;
+            letter-spacing: 3px;
+        }
+
+        .cart-empty-message {
+            text-align: center;
+            padding: 3rem;
+            background-color: #f9f9f9;
+            border: 2px solid #ddd;
+        }
+
+        .cart-empty-message p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cart-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .cart-items-container {
+            background-color: #fff;
+            border: 2px solid #000;
+        }
+
+        .cart-header {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 1fr 0.5fr;
+            padding: 1rem;
+            background-color: #222;
+            color: #fff;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 1fr 0.5fr;
+            padding: 1rem;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-product {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 1px solid #000;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+        }
+
+        .cart-item-price, 
+        .cart-item-total {
+            font-weight: bold;
+            color: #900;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .quantity-btn:hover {
+            background-color: #ddd;
+        }
+
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .remove-item-btn {
+            background: none;
+            border: none;
+            color: #900;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .remove-item-btn:hover {
+            color: #700;
+        }
+
+        .cart-summary {
+            background-color: #f5f5f5;
+            padding: 1.5rem;
+            border: 2px solid #000;
+        }
+
+        .cart-totals h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #900;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #900;
+            padding-bottom: 0.5rem;
+        }
+
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-grand-total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            border-bottom: none;
+        }
+
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+
+        .continue-shopping-btn, 
+        .checkout-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .continue-shopping-btn {
+            background-color: #333;
+            color: #fff;
+            flex: 1;
+        }
+
+        .checkout-btn {
+            background-color: #900;
+            color: #fff;
+            flex: 1;
+        }
+
+        .continue-shopping-btn:hover {
+            background-color: #555;
+        }
+
+        .checkout-btn:hover {
+            background-color: #700;
+        }
+
+        .cart-notes {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cart-header {
+                display: none;
+            }
+            
+            .cart-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .cart-item-product {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cart-item-image {
+                width: 100%;
+                height: auto;
+                max-width: 200px;
+            }
+            
+            .cart-item-price::before {
+                content: "Prezzo: ";
+            }
+            
+            .cart-item-total::before {
+                content: "Totale: ";
+            }
+            
+            .cart-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="background-image"></div>
+
+<header>
+    <div class="header-banner">
+        <div class="logo-container">
+            <img src="logoArmeria.jpeg" alt="Armeria Nazionale Logo" class="header-logo">
+        </div>
+        <div class="symbol-left"></div>
+        <h1>CARRELLO</h1>
+        <div class="symbol-right"></div>
+        <div class="motto">FORZA • ONORE • TRADIZIONE</div>
+        <div class="cart-icon">
+            <a href="carrello.html" title="Vai al carrello">
+                <span class="cart-icon-symbol">🛒</span>
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="catalogo.html">CATALOGO</a></li>
+            <li><a href="munizioni.html">MUNIZIONI</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="cart-section">
+        <h2>IL TUO CARRELLO</h2>
+        
+        <div id="cart-empty-message" class="cart-empty-message" style="display: none;">
+            <p>Il tuo carrello è vuoto.</p>
+            <a href="catalogo.html" class="continue-shopping-btn">CONTINUA LO SHOPPING</a>
+        </div>
+        
+        <div id="cart-content" class="cart-content">
+            <div class="cart-items-container">
+                <div class="cart-header">
+                    <div class="cart-header-product">PRODOTTO</div>
+                    <div class="cart-header-price">PREZZO</div>
+                    <div class="cart-header-quantity">QUANTITÀ</div>
+                    <div class="cart-header-total">TOTALE</div>
+                    <div class="cart-header-actions"></div>
+                </div>
+                
+                <div id="cart-items">
+                    <!-- Gli elementi del carrello verranno inseriti qui dinamicamente -->
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <div class="cart-totals">
+                    <h3>RIEPILOGO ORDINE</h3>
+                    <div class="cart-total-row">
+                        <span>Subtotale:</span>
+                        <span id="cart-subtotal">€0.00</span>
+                    </div>
+                    <div class="cart-total-row">
+                        <span>IVA (22%):</span>
+                        <span id="cart-tax">€0.00</span>
+                    </div>
+                    <div class="cart-total-row cart-grand-total">
+                        <span>TOTALE:</span>
+                        <span id="cart-total">€0.00</span>
+                    </div>
+                </div>
+                
+                <div class="cart-actions">
+                    <a href="catalogo.html" class="continue-shopping-btn">CONTINUA LO SHOPPING</a>
+                    <a href="#" id="checkout-btn" class="checkout-btn">PROCEDI ALL'ACQUISTO</a>
+                </div>
+                
+                <div class="cart-notes">
+                    <p>Nota: La vendita di armi e munizioni è soggetta alle normative vigenti. È richiesta la presentazione di porto d'armi o documento equipollente al momento dell'acquisto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="logoArmeria.jpeg" alt="Armeria Nazionale Logo" class="footer-logo-img">
+            ARMERIA NAZIONALE
+        </div>
+        <div class="footer-info">
+            <p>Via delle Armi 123, 00100 Roma</p>
+            <p>Tel: 06 1234567 | Email: info@armerianazionale.it</p>
+            <p>P.IVA: 12345678901 | © 2023 Armeria Nazionale - Tutti i diritti riservati</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Funzioni per la gestione del carrello
+    document.addEventListener('DOMContentLoaded', function() {
+        loadCartItems();
+        updateCartCount();
+    });
+
+    function loadCartItems() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartEmptyMessage = document.getElementById('cart-empty-message');
+        const cartContent = document.getElementById('cart-content');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        
+        // Recupera gli elementi del carrello dal localStorage
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // Mostra/nascondi messaggi appropriati in base allo stato del carrello
+        if (!cartItems || cartItems.length === 0) {
+            cartEmptyMessage.style.display = 'block';
+            cartContent.style.display = 'none';
+            return;
+        } else {
+            cartEmptyMessage.style.display = 'none';
+            cartContent.style.display = 'block';
+        }
+        
+        // Svuota il contenitore
+        cartItemsContainer.innerHTML = '';
+        
+        let subtotal = 0;
+        
+        // Aggiungi ogni elemento del carrello
+        cartItems.forEach((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+            
+            // Determina l'immagine in base a parole chiave nel nome
+            let imagePath = getItemImage(item.name);
+            
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.innerHTML = `
+                <div class="cart-item-product">
+                    <img src="${imagePath}" alt="${item.name}" class="cart-item-image" onerror="this.src='default.jpg'">
+                    <div class="cart-item-name">${item.name}</div>
+                </div>
+                <div class="cart-item-price">€ ${item.price.toFixed(2)}</div>
+                <div class="cart-item-quantity">
+                    <button class="quantity-btn" onclick="decrementQuantity(${index})">-</button>
+                    <input type="number" class="quantity-input" value="${item.quantity}" min="1" max="99" onchange="updateQuantity(${index}, this.value)">
+                    <button class="quantity-btn" onclick="incrementQuantity(${index})">+</button>
+                </div>
+                <div class="cart-item-total">€ ${itemTotal.toFixed(2)}</div>
+                <div class="cart-item-actions">
+                    <button class="remove-item-btn" onclick="removeItem(${index})">✕</button>
+                </div>
+            `;
+            
+            cartItemsContainer.appendChild(itemElement);
+        });
+        
+        // Calcola e aggiorna i totali
+        const tax = subtotal * 0.22;
+        const total = subtotal + tax;
+        
+        document.getElementById('cart-subtotal').textContent = `€ ${subtotal.toFixed(2)}`;
+        document.getElementById('cart-tax').textContent = `€ ${tax.toFixed(2)}`;
+        document.getElementById('cart-total').textContent = `€ ${total.toFixed(2)}`;
+        
+        // Aggiungi evento al pulsante di checkout
+        document.getElementById('checkout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Grazie per il tuo ordine! Verrai reindirizzato alla pagina di pagamento.');
+            // Qui puoi implementare il reindirizzamento alla pagina di checkout
+        });
+    }
+
+    function getItemImage(itemName) {
+        // Normalizza il nome dell'articolo
+        const normalizedName = itemName.toLowerCase().trim();
+        
+        // Determina l'immagine in base a parole chiave nel nome
+        if (normalizedName.includes('9mm') || normalizedName.includes('9x19mm')) {
+            if (normalizedName.includes('jhp')) {
+                return 'Munizioni 9mm JHP.jpeg';
+            }
+            return '9mm Parabellum FMJ.jpeg';
+        } else if (normalizedName.includes('5.56') || normalizedName.includes('5.56x45mm')) {
+            if (normalizedName.includes('traccianti')) {
+                return 'Munizioni 5.56mm Traccianti.jpeg';
+            }
+            return '5.56mm.jpeg';
+        } else if (normalizedName.includes('7.62') || normalizedName.includes('7.62x51mm')) {
+            return 'Munizioni 7.62x51mm NATO.jpeg';
+        } else if (normalizedName.includes('50bmg') || normalizedName.includes('.50')) {
+            return '50BMG.jpeg';
+        } else if (normalizedName.includes('45acp') || normalizedName.includes('.45')) {
+            return '45 ACP.jpeg';
+        } else if (normalizedName.includes('12 gauge') || normalizedName.includes('buckshot')) {
+            return 'Cartucce 12 Gauge Buckshot.jpeg';
+        }
+        
+        // Immagine predefinita se non viene trovata una corrispondenza
+        return 'default.jpg';
+    }
+
+    function updateQuantity(index, newQuantity) {
+        // Recupera gli elementi del carrello
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // Verifica che l'indice sia valido
+        if (index < 0 || index >= cartItems.length) return;
+        
+        // Converti la quantità in un numero intero e assicurati che sia almeno 1
+        newQuantity = parseInt(newQuantity);
+        if (isNaN(newQuantity) || newQuantity < 1) newQuantity = 1;
+        
+        // Aggiorna la quantità
+        cartItems[index].quantity = newQuantity;
+        
+        // Salva il carrello aggiornato
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+        // Ricarica gli elementi del carrello
+        loadCartItems();
+        updateCartCount();
+    }
+
+    function incrementQuantity(index) {
+        // Recupera gli elementi del carrello
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // Verifica che l'indice sia valido
+        if (index < 0 || index >= cartItems.length) return;
+        
+        // Incrementa la quantità
+        cartItems[index].quantity++;
+        
+        // Salva il carrello aggiornato
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+        // Ricarica gli elementi del carrello
+        loadCartItems();
+        updateCartCount();
+    }
+
+    function decrementQuantity(index) {
+        // Recupera gli elementi del carrello
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // Verifica che l'indice sia valido
+        if (index < 0 || index >= cartItems.length) return;
+        
+        // Decrementa la quantità, ma assicurati che sia almeno 1
+        if (cartItems[index].quantity > 1) {
+            cartItems[index].quantity--;
+            
+            // Salva il carrello aggiornato
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            
+            // Ricarica gli elementi del carrello
+            loadCartItems();
+            updateCartCount();
+        }
+    }
+
+    function removeItem(index) {
+        // Recupera gli elementi del carrello
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // Verifica che l'indice sia valido
+        if (index < 0 || index >= cartItems.length) return;
+        
+        // Rimuovi l'elemento
+        cartItems.splice(index, 1);
+        
+        // Salva il carrello aggiornato
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+        // Ricarica gli elementi del carrello
+        loadCartItems();
+        updateCartCount();
+    }
+
+    // Funzione per aggiornare il conteggio degli articoli nel carrello
+    function updateCartCount() {
+        const cartCountElement = document.getElementById('cart-count');
+        if (!cartCountElement) return;
+        
+        // Recupera gli elementi del carrello dal localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        let itemCount = 0;
+        
+        // Calcola il numero totale di articoli
+        cartItems.forEach(item => {
+            itemCount += item.quantity;
+        });
+        
+        // Aggiorna il conteggio visualizzato
+        cartCountElement.textContent = itemCount;
+    }
+</script>
+</body>
+</html>

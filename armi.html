@@ -3,11 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armi | Armeria Nazionale</title>
+    <title>Armi da Fuoco | Armeria Nazionale</title>
+    <link rel="stylesheet" href="catalogo.css" />
     <link rel="stylesheet" href="armi.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Stile per tema nero */
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+        
+        .background-image {
+            opacity: 0.1;
+        }
+        
+        .header-banner {
+            background-color: #000;
+        }
+        
+        .main-nav {
+            background-color: #111;
+        }
+        
+        .catalogo-intro {
+            background-color: #111;
+        }
+        
+        .filtri-container {
+            background-color: #111;
+        }
+        
+        .filtro-btn {
+            background-color: #222;
+            color: #fff;
+        }
+        
+        .filtro-btn:hover {
+            background-color: #333;
+        }
+        
+        .filtro-btn.active {
+            background-color: #000;
+            border: 1px solid #444;
+        }
+        
+        .product-card {
+            background-color: #111;
+            border: 1px solid #333;
+        }
+        
+        .product-info h3 {
+            color: #fff;
+        }
+        
+        .product-info p {
+            color: #ccc;
+        }
+        
+        .price {
+            color: #fff;
+        }
+        
+        .details-button {
+            background-color: #222;
+        }
+        
+        .details-button:hover {
+            background-color: #333;
+        }
+        
+        .add-to-cart {
+            background-color: #000;
+            border: 1px solid #444;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #222;
+        }
+        
+        .info-container {
+            background-color: #111;
+        }
+        
+        .info-card {
+            background-color: #222;
+            border-left: 4px solid #000;
+        }
+        
+        .info-card h3 {
+            color: #fff;
+        }
+        
+        footer {
+            background-color: #000;
+            border-top: 1px solid #333;
+        }
+    </style>
 </head>
 <body>
 <div class="background-image"></div>
@@ -18,15 +112,21 @@
             <img src="logoArmeria.jpeg" alt="Armeria Nazionale Logo" class="header-logo">
         </div>
         <div class="symbol-left"></div>
-        <h1>ARMI</h1>
+        <h1>ARMI DA FUOCO</h1>
         <div class="symbol-right"></div>
         <div class="motto">FORZA • ONORE • TRADIZIONE</div>
+        <div class="cart-icon">
+            <a href="carrello.html" title="Vai al carrello">
+                <span class="cart-icon-symbol">🛒</span>
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
     </div>
     <nav class="main-nav">
         <ul>
             <li><a href="index.html">HOME</a></li>
             <li><a href="catalogo.html">CATALOGO</a></li>
-            <li><a href="storia.html">STORIA</a></li>
+            <li><a href="munizioni.html">MUNIZIONI</a></li>
             <li><a href="contatti.html">CONTATTI</a></li>
         </ul>
     </nav>
@@ -35,297 +135,281 @@
 <main>
     <section class="catalogo-intro">
         <div class="intro-content">
-            <h2>ARMI DI ALTA QUALITÀ</h2>
-            <p>Esplora la nostra selezione di armi da fuoco di precisione</p>
+            <h2>ARMI DA FUOCO DI ALTA QUALITÀ</h2>
+            <p>La nostra selezione di armi da fuoco di alta qualità, dalle pistole ai fucili di precisione, prodotte dai migliori marchi mondiali.</p>
         </div>
     </section>
 
-    <section class="prodotti">
-        <h2>CATALOGO ARMI</h2>
-
-        <div class="category-tabs">
-            <button class="category-tab active" data-category="pistole">PISTOLE SEMIAUTOMATICHE</button>
-            <button class="category-tab" data-category="revolver">REVOLVER</button>
-            <button class="category-tab" data-category="fucili-caccia">FUCILI DA CACCIA</button>
-            <button class="category-tab" data-category="fucili-precisione">FUCILI DI PRECISIONE</button>
-            <button class="category-tab" data-category="fucili-assalto">FUCILI D'ASSALTO</button>
-            <button class="category-tab" data-category="fucili-tattici">FUCILI TATTICI</button>
-        </div>
-
-        <div class="product-grid category-content active" id="pistole-content">
-            <!-- Mantieni le pistole semiautomatiche esistenti -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="pistola.jpeg" alt="pistola" />
-                </div>
-                <div class="product-info">
-                    <h3>Laugo Arms Alien</h3>
-                    <p>Pistola semiautomatica rivoluzionaria, con asse di volata bassissimo e rinculo controllato a gas.</p>
-                    <p class="price">€ 5.490</p>
-                    <div class="product-actions">
-                        <a href="pistola1.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="laugo arms alien">ACQUISTA</button>
-                    </div>
-                </div>
+    <section class="filtri-armi">
+        <div class="filtri-container">
+            <h3>FILTRA PER CATEGORIA</h3>
+            <div class="filtri-buttons">
+                <button class="filtro-btn active" data-filter="all">TUTTE</button>
+                <button class="filtro-btn" data-filter="pistole">PISTOLE</button>
+                <button class="filtro-btn" data-filter="fucili">FUCILI</button>
+                <button class="filtro-btn" data-filter="assalto">FUCILI D'ASSALTO</button>
+                <button class="filtro-btn" data-filter="precisione">ARMI DI PRECISIONE</button>
             </div>
-            
-            <div class="product-card">
+        </div>
+    </section>
+    
+    <section class="prodotti-armi">
+        <div class="product-grid">
+            <div class="product-card" data-category="pistole">
                 <div class="product-image">
-                    <img src="Glock 17.jpg" alt="Glock 17" />
+                    <img src="Glock 17 Gen5.jpeg" alt="Glock 17" />
                 </div>
                 <div class="product-info">
                     <h3>Glock 17 Gen5</h3>
-                    <p>Pistola semiautomatica affidabile e robusta, standard per forze dell'ordine e militari.</p>
+                    <p>Pistola semiautomatica calibro 9x19mm, affidabile e robusta, standard per forze dell'ordine e militari.</p>
                     <p class="price">€ 750</p>
                     <div class="product-actions">
-                        <a href="glock17-1.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="glock 17">ACQUISTA</button>
+                        <a href="dettagli-glock17.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="Glock 17 Gen5">ACQUISTA</button>
                     </div>
                 </div>
             </div>
             
-            <div class="product-card">
+            <div class="product-card" data-category="pistole">
                 <div class="product-image">
-                    <img src="beretta.jpg" alt="Beretta 92FS" />
+                    <img src="pistola.jpeg" alt="Laugo Arms Alien" />
+                </div>
+                <div class="product-info">
+                    <h3>Laugo Arms Alien</h3>
+                    <p>Pistola semiautomatica di precisione calibro 9x19mm con design innovativo e baricentro ultra-basso.</p>
+                    <p class="price">€ 4.200</p>
+                    <div class="product-actions">
+                        <a href="dettagli-laugo.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="Laugo Arms Alien">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="pistole">
+                <div class="product-image">
+                    <img src="beretta-92fs.jpg" alt="Beretta 92FS" />
                 </div>
                 <div class="product-info">
                     <h3>Beretta 92FS</h3>
-                    <p>Pistola semiautomatica italiana, simbolo di eccellenza e affidabilità, adottata da numerose forze armate.</p>
+                    <p>Pistola semiautomatica calibro 9x19mm, iconica e affidabile, utilizzata da forze militari e di polizia in tutto il mondo.</p>
                     <p class="price">€ 820</p>
                     <div class="product-actions">
-                        <a href="beretta92.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="beretta 92fs">ACQUISTA</button>
+                        <a href="dettagli-beretta92.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="Beretta 92FS">ACQUISTA</button>
                     </div>
                 </div>
             </div>
             
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="CZ_75.png" alt="CZ 75" />
-                </div>
-                <div class="product-info">
-                    <h3>CZ 75 SP-01 Shadow</h3>
-                    <p>Pistola da competizione di alta precisione, preferita dai tiratori sportivi di tutto il mondo.</p>
-                    <p class="price">€ 1.250</p>
-                    <div class="product-actions">
-                        <a href="cz75.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="cz 75 shadow">ACQUISTA</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="product-grid category-content" id="revolver-content">
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="smith-wesson-686.jpg" alt="Smith & Wesson 686" />
-                </div>
-                <div class="product-info">
-                    <h3>Smith & Wesson 686</h3>
-                    <p>Revolver in acciaio inox, calibro .357 Magnum, ideale per tiro sportivo e difesa.</p>
-                    <p class="price">€ 1.150</p>
-                    <div class="product-actions">
-                        <a href="sw686.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="sw686">ACQUISTA</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Aggiungi altri revolver qui -->
-        </div>
-
-        <div class="product-grid category-content" id="fucili-caccia-content">
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="beretta-686.jpg" alt="Beretta 686 Silver Pigeon" />
-                </div>
-                <div class="product-info">
-                    <h3>Beretta 686 Silver Pigeon</h3>
-                    <p>Fucile sovrapposto da caccia, calibro 12, con incisioni classiche e calcio in noce selezionato.</p>
-                    <p class="price">€ 2.450</p>
-                    <div class="product-actions">
-                        <a href="beretta686.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="beretta686">ACQUISTA</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Aggiungi altri fucili da caccia qui -->
-        </div>
-
-        <div class="product-grid category-content" id="fucili-precisione-content">
-            <!-- Sposta qui i fucili di precisione esistenti come Barrett M82A1 e Accuracy International AX50 -->
-            <div class="product-card">
+            <div class="product-card" data-category="fucili">
                 <div class="product-image">
                     <img src="Benelli M4.webp" alt="Benelli M4" />
                 </div>
                 <div class="product-info">
                     <h3>Benelli M4 Super 90</h3>
-                    <p>Fucile a pompa semiautomatico di produzione italiana, utilizzato dalle forze speciali di tutto il mondo.</p>
+                    <p>Fucile a pompa semiautomatico calibro 12, utilizzato da forze speciali in tutto il mondo.</p>
                     <p class="price">€ 1.950</p>
                     <div class="product-actions">
-                        <a href="benelli1.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="benelli m4">ACQUISTA</button>
+                        <a href="dettagli-benelli.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="Benelli M4 Super 90">ACQUISTA</button>
                     </div>
                 </div>
             </div>
             
-            <div class="product-card">
+            <div class="product-card" data-category="fucili">
                 <div class="product-image">
-                    <img src="Barrett M82A1.jpg" alt="Barrett M82" />
+                    <img src="remington-870.jpg" alt="Remington 870" />
+                </div>
+                <div class="product-info">
+                    <h3>Remington 870</h3>
+                    <p>Fucile a pompa calibro 12, affidabile e versatile, ideale per difesa, caccia e tiro sportivo.</p>
+                    <p class="price">€ 780</p>
+                    <div class="product-actions">
+                        <a href="dettagli-remington.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="Remington 870">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="assalto">
+                <div class="product-image">
+                    <img src="Beretta ARX160.jpg" alt="Beretta ARX160" />
+                </div>
+                <div class="product-info">
+                    <h3>Beretta ARX160</h3>
+                    <p>Fucile d'assalto calibro 5.56x45mm NATO, moderno e modulare, in dotazione all'Esercito Italiano.</p>
+                    <p class="price">€ 2.800</p>
+                    <div class="product-actions">
+                        <a href="dettagli-arx160.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="Beretta ARX160">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="assalto">
+                <div class="product-image">
+                    <img src="m4-carabine.jpeg" alt="M4 Carabine" />
+                </div>
+                <div class="product-info">
+                    <h3>M4 Carbine</h3>
+                    <p>Carabina d'assalto calibro 5.56x45mm NATO, versione compatta dell'M16, standard per le forze armate USA.</p>
+                    <p class="price">€ 2.400</p>
+                    <div class="product-actions">
+                        <a href="dettagli-m4.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="M4 Carbine">ACQUISTA</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="precisione">
+                <div class="product-image">
+                    <img src="Barrett M82A1.jpg" alt="Barrett M82A1" />
                 </div>
                 <div class="product-info">
                     <h3>Barrett M82A1</h3>
                     <p>Fucile di precisione anti-materiale calibro .50 BMG, per operazioni a lunghissima distanza.</p>
                     <p class="price">€ 12.500</p>
                     <div class="product-actions">
-                        <a href="barret1.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="barrett m82">ACQUISTA</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="Remington 870.jpg" alt="Remington 870" />
-                </div>
-                <div class="product-info">
-                    <h3>Remington 870</h3>
-                    <p>Fucile a pompa classico e affidabile, utilizzato da cacciatori e forze dell'ordine in tutto il mondo.</p>
-                    <p class="price">€ 850</p>
-                    <div class="product-actions">
-                        <a href="remington870.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="remington 870">ACQUISTA</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="Accuracy International AX50.jpg" alt="Accuracy International AX50" />
-                </div>
-                <div class="product-info">
-                    <h3>Accuracy International AX50</h3>
-                    <p>Fucile di precisione di livello militare, progettato per tiratori scelti professionisti.</p>
-                    <p class="price">€ 15.800</p>
-                    <div class="product-actions">
-                        <a href="accuracy-ax50.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="accuracy ax50">ACQUISTA</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="product-grid category-content" id="assalto-content">
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="m4 carabine.jpeg" alt="M4 CARABINE" />
-                </div>
-                <div class="product-info">
-                    <h3>M4 CARABINE</h3>
-                    <p>Carabina leggera e versatile, ideale per combattimento urbano e operazioni militari.</p>
-                    <p class="price">€ 2.500</p>
-                    <div class="product-actions">
-                        <a href="M4-CARABINE.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="m4 carabine">ACQUISTA</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="Beretta ARX160.jpg" alt="Beretta ARX160" />
-                </div>
-                <div class="product-info">
-                    <h3>Beretta ARX160</h3>
-                    <p>Fucile d'assalto italiano di ultima generazione, modulare e adattabile a qualsiasi scenario operativo.</p>
-                    <p class="price">€ 3.200</p>
-                    <div class="product-actions">
-                        <a href="Beretta-ARX160.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="beretta arx160">ACQUISTA</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="AK-47.png" alt="AK-47" />
-                </div>
-                <div class="product-info">
-                    <h3>AK-47 Kalashnikov</h3>
-                    <p>Il leggendario fucile d'assalto russo, simbolo di affidabilità e robustezza in qualsiasi condizione.</p>
-                    <p class="price">€ 2.800</p>
-                    <div class="product-actions">
-                        <a href="ak47.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="ak47">ACQUISTA</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="hk416.jpg" alt="HK416" />
-                </div>
-                <div class="product-info">
-                    <h3>Heckler & Koch HK416</h3>
-                    <p>Fucile d'assalto tedesco di alta precisione, utilizzato dalle forze speciali più elite al mondo.</p>
-                    <p class="price">€ 3.800</p>
-                    <div class="product-actions">
-                        <a href="hk416.html" class="details-button">DETTAGLI</a>
-                        <button class="add-to-cart" data-product="hk416">ACQUISTA</button>
+                        <a href="dettagli-barrett.html" class="details-button">DETTAGLI</a>
+                        <button class="add-to-cart" data-product="Barrett M82A1">ACQUISTA</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="cart">
-        <h2>CARRELLO D'ACQUISTO</h2>
-        <div id="cart-content">
-            <ul id="cart-items">
-                <!-- Gli elementi del carrello verranno inseriti qui dinamicamente -->
-            </ul>
-            <div class="empty-cart-message" id="empty-cart-message">Il tuo carrello è vuoto. Aggiungi prodotti per procedere all'acquisto.</div>
-            <div class="cart-total">Totale: <span id="cart-total-amount">€0.00</span></div>
-            <div class="cart-actions">
-                <button class="clear-cart" id="clear-cart">SVUOTA CARRELLO</button>
-                <button class="checkout" id="checkout">PROCEDI ALL'ACQUISTO</button>
+    
+    <section class="info-armi">
+        <div class="info-container">
+            <h2>INFORMAZIONI SULLE ARMI DA FUOCO</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>CONSERVAZIONE</h3>
+                    <p>Le armi da fuoco devono essere conservate in luoghi sicuri, asciutti e lontani dalla portata di bambini o persone non autorizzate. Utilizzare sempre cassaforti o armadi blindati approvati.</p>
+                </div>
+                <div class="info-card">
+                    <h3>TRASPORTO</h3>
+                    <p>Il trasporto di armi da fuoco è regolamentato dalla legge. Assicurati di rispettare tutte le normative vigenti e di trasportare le armi scariche, in custodie chiuse e separate dalle munizioni.</p>
+                </div>
+                <div class="info-card">
+                    <h3>MANUTENZIONE</h3>
+                    <p>Una corretta manutenzione è essenziale per garantire la sicurezza e l'affidabilità dell'arma. Pulisci e lubrifica regolarmente la tua arma seguendo le indicazioni del produttore.</p>
+                </div>
             </div>
         </div>
     </section>
+    
+    <div class="view-all-button">
+        <a href="catalogo.html" class="details-button">TORNA AL CATALOGO</a>
+    </div>
 </main>
 
 <footer>
     <div class="footer-content">
-        <div class="footer-logo">ARMERIA NAZIONALE</div>
+        <div class="footer-logo">
+            <img src="logoArmeria.jpeg" alt="Armeria Nazionale Logo" class="footer-logo-img">
+            ARMERIA NAZIONALE
+        </div>
         <div class="footer-info">
-            <p>&copy; 2025 - Tutti i diritti riservati</p>
-            <p>Vendita riservata ai possessori di porto d'armi</p>
+            <p>Via delle Armi 123, 00100 Roma</p>
+            <p>Tel: 06 1234567 | Email: info@armerianazionale.it</p>
+            <p>P.IVA: 12345678901 | © 2023 Armeria Nazionale - Tutti i diritti riservati</p>
         </div>
     </div>
 </footer>
 
-<script src="main.js"></script>
 <script>
-    // Script per gestire le tab delle categorie
+    // Script per il carosello di immagini e funzionalità del carrello
     document.addEventListener('DOMContentLoaded', function() {
-        const categoryTabs = document.querySelectorAll('.category-tab');
-        const categoryContents = document.querySelectorAll('.category-content');
+        // Funzione per i filtri delle armi
+        const filterButtons = document.querySelectorAll('.filtro-btn');
+        const productCards = document.querySelectorAll('.product-card');
         
-        categoryTabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                // Rimuovi la classe active da tutte le tab
-                categoryTabs.forEach(t => t.classList.remove('active'));
-                // Aggiungi la classe active alla tab cliccata
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Rimuovi la classe active da tutti i pulsanti
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Aggiungi la classe active al pulsante cliccato
                 this.classList.add('active');
                 
-                // Nascondi tutti i contenuti
-                categoryContents.forEach(content => content.classList.remove('active'));
+                const filter = this.getAttribute('data-filter');
                 
-                // Mostra il contenuto corrispondente alla tab cliccata
-                const categoryToShow = this.dataset.category;
-                document.getElementById(`${categoryToShow}-content`).classList.add('active');
+                productCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Aggiorna il conteggio quando la pagina viene caricata
+        updateCartCount();
+        
+        // Aggiungi funzionalità ai pulsanti "Acquista"
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const product = this.getAttribute('data-product');
+                const productName = this.closest('.product-info').querySelector('h3').textContent;
+                const priceText = this.closest('.product-info').querySelector('.price').textContent;
+                const price = parseFloat(priceText.replace('€', '').trim());
+                
+                addToCart(productName, price);
             });
         });
     });
+    
+    // Funzione per aggiornare il conteggio degli articoli nel carrello
+    function updateCartCount() {
+        const cartCountElement = document.getElementById('cart-count');
+        if (!cartCountElement) return;
+        
+        // Recupera gli elementi del carrello dal localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        let itemCount = 0;
+        
+        // Calcola il numero totale di articoli
+        cartItems.forEach(item => {
+            itemCount += item.quantity;
+        });
+        
+        // Aggiorna il conteggio visualizzato
+        cartCountElement.textContent = itemCount;
+    }
+    
+    // Funzione per aggiungere un prodotto al carrello
+    function addToCart(productName, price, quantity = 1) {
+        // Recupera gli elementi del carrello
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // Cerca se il prodotto è già nel carrello
+        const existingItemIndex = cartItems.findIndex(item => item.name === productName);
+        
+        if (existingItemIndex !== -1) {
+            // Se il prodotto è già nel carrello, incrementa la quantità
+            cartItems[existingItemIndex].quantity += quantity;
+        } else {
+            // Altrimenti, aggiungi un nuovo elemento
+            cartItems.push({
+                name: productName,
+                price: price,
+                quantity: quantity
+            });
+        }
+        
+        // Salva il carrello aggiornato
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+        // Aggiorna il conteggio del carrello
+        updateCartCount();
+        
+        // Mostra un messaggio di conferma
+        alert(`${productName} aggiunto al carrello!`);
+    }
 </script>
 </body>
 </html>

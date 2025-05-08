@@ -217,12 +217,225 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Stili specifici per la pagina delle armi */
+
+.filtri-armi {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filtri-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.filtri-container h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.filtri-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filtro-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filtro-btn:hover {
+    background-color: #555;
+}
+
+.filtro-btn.active {
+    background-color: #900;
+}
+
+.prodotti-armi {
+    margin-bottom: 3rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.product-info p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #900;
+    margin-bottom: 1rem;
+}
+
+.product-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.details-button, .add-to-cart {
+    flex: 1;
+    padding: 0.75rem 0;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.details-button {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+}
+
+.add-to-cart {
+    background-color: #900;
+    color: #fff;
+}
+
+.details-button:hover {
+    background-color: #555;
+}
+
+.add-to-cart:hover {
+    background-color: #700;
+}
+
+.info-armi {
+    margin: 3rem 0;
+}
+
+.info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.info-container h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-left: 4px solid #900;
+}
+
+.info-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: #900;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.info-card p {
+    line-height: 1.6;
+}
+
+.view-all-button {
+    text-align: center;
+    margin: 2rem 0 4rem;
+}
+
+.view-all-button .details-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-    .category-tabs {
-        flex-direction: column;
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        padding: 0 1rem;
     }
     
+    .filtro-btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
     .product-grid {
         grid-template-columns: 1fr;
     }
@@ -231,3 +444,12 @@ body {
         flex-direction: column;
     }
 }
+/* Stili specifici per la pagina munizioni */
+.background-image {
+    background-image: url('sfondo\ armi.jpeg') !important;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3 !important;
+}
+
+/* Puoi aggiungere altri stili specifici per la pagina munizioni qui */

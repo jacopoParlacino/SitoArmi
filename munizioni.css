@@ -1,0 +1,9 @@
+/* Stili specifici per la pagina munizioni */
+.background-image {
+    background-image: url('sfondo\ munizioni.jpeg') !important;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3 !important;
+}
+
+/* Puoi aggiungere altri stili specifici per la pagina munizioni qui */

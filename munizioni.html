@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Munizioni | Armeria Nazionale</title>
     <link rel="stylesheet" href="catalogo.css" />
+    <link rel="stylesheet" href="munizioni.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
@@ -21,6 +22,12 @@
         <h1>MUNIZIONI</h1>
         <div class="symbol-right"></div>
         <div class="motto">FORZA • ONORE • TRADIZIONE</div>
+        <div class="cart-icon">
+            <a href="carrello.html" title="Vai al carrello">
+                <span class="cart-icon-symbol">🛒</span>
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
     </div>
     <nav class="main-nav">
         <ul>
@@ -219,7 +226,7 @@
 </footer>
 
 <script>
-    // Script per il carosello di immagini
+    // Script per il carosello di immagini e funzionalità del carrello
     document.addEventListener('DOMContentLoaded', function() {
         // Funzione per i filtri delle munizioni
         const filterButtons = document.querySelectorAll('.filtro-btn');
@@ -248,16 +255,70 @@
             });
         });
         
+        // Aggiorna il conteggio quando la pagina viene caricata
+        updateCartCount();
+        
         // Aggiungi funzionalità ai pulsanti "Acquista"
         const addToCartButtons = document.querySelectorAll('.add-to-cart');
         addToCartButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const product = this.getAttribute('data-product');
-                alert(`Hai aggiunto ${product} al carrello!`);
-                // Qui puoi implementare la logica del carrello
+                const productName = this.closest('.product-info').querySelector('h3').textContent;
+                const priceText = this.closest('.product-info').querySelector('.price').textContent;
+                const price = parseFloat(priceText.replace('€', '').split('/')[0].trim());
+                
+                addToCart(productName, price);
             });
         });
     });
+    
+    // Funzione per aggiornare il conteggio degli articoli nel carrello
+    function updateCartCount() {
+        const cartCountElement = document.getElementById('cart-count');
+        if (!cartCountElement) return;
+        
+        // Recupera gli elementi del carrello dal localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        let itemCount = 0;
+        
+        // Calcola il numero totale di articoli
+        cartItems.forEach(item => {
+            itemCount += item.quantity;
+        });
+        
+        // Aggiorna il conteggio visualizzato
+        cartCountElement.textContent = itemCount;
+    }
+    
+    // Funzione per aggiungere un prodotto al carrello
+    function addToCart(productName, price, quantity = 1) {
+        // Recupera gli elementi del carrello
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // Cerca se il prodotto è già nel carrello
+        const existingItemIndex = cartItems.findIndex(item => item.name === productName);
+        
+        if (existingItemIndex !== -1) {
+            // Se il prodotto è già nel carrello, incrementa la quantità
+            cartItems[existingItemIndex].quantity += quantity;
+        } else {
+            // Altrimenti, aggiungi un nuovo elemento
+            cartItems.push({
+                name: productName,
+                price: price,
+                quantity: quantity
+            });
+        }
+        
+        // Salva il carrello aggiornato
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+        // Aggiorna il conteggio del carrello
+        updateCartCount();
+        
+        // Mostra un messaggio di conferma
+        alert(`${productName} aggiunto al carrello!`);
+    }
 </script>
 </body>
 </html>
